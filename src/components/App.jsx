@@ -3,7 +3,7 @@ import _ from 'lodash';
 import classnames from 'classnames';
 
 import {
-  Combobox,
+  ComboBox,
   Modal,
 } from 'ui';
 
@@ -37,7 +37,7 @@ const App = () => <div>
   <div className={styles.block}>
     <h3>Наведи чтобы выбрать значение</h3>
     <div className={styles.hovered}>
-      <Combobox
+      <ComboBox
         source={getSource}
         renderItem={foundItem}
         placeholder="Выберите значение"
