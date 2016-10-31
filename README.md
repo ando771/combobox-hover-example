@@ -1,12 +1,1 @@
-Проект для быстрого старта разработки на React.js с использованием общей
-библиотеки копонентов.
-
-## Как начать
-
-1. Клонировать репозиторий.
-
-2. `$ npm install`
-
-3. `$ npm start`
-
-4. Открыть http://localhost:8080 в браузере.
+[https://ando771.github.io/combobox-hover-example/](https://ando771.github.io/combobox-hover-example/)
