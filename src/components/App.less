@@ -1,0 +1,22 @@
+@color: #ded6f5;
+
+:local {
+  .block {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 320px;
+    height: 150px;
+    background-color: @color;
+    border: 1px solid darken(@color, 10%);
+    margin: 30px;
+    padding: 20px 30px;
+
+    .hovered {
+      display: none;
+    }
+
+    &:hover .hovered {
+      display: block;
+    }
+  }
+}

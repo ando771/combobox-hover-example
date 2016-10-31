@@ -1,42 +1,51 @@
 import React from 'react';
+import _ from 'lodash';
+import classnames from 'classnames';
 
 import {
-  Button,
+  Combobox,
   Modal,
 } from 'ui';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+import styles from './App.less';
 
-    this.state = {greet: false};
-  }
+const values = [
+  'Первый вариант',
+  'Второй вариант',
+  'Третий вариант',
+  'Четвертый вариант',
+  'Пятый вариант',
+  'Шестой вариант',
+  'Седьмой вариант',
+  'Восьмой вариант',
+  'Девятый вариант',
+  'Десятый вариант',
+]
 
-  render() {
-    return (
-      <div>
-        Hey dude!
-        <br />
-        <Button onClick={e => this.open()}>Say hi</Button>
-        {this.state.greet && this.renderModal()}
-      </div>
-    );
-  }
-
-  renderModal() {
-    return (
-      <Modal width={400} onClose={e => this.close()}>
-        <Modal.Header>Whoop whoop</Modal.Header>
-        <Modal.Body>Hi!</Modal.Body>
-      </Modal>
-    );
-  }
-
-  open() {
-    this.setState({greet: true});
-  }
-
-  close() {
-    this.setState({greet: false});
-  }
+function getSource(input) {
+  const inputInLowerCase = input.toLowerCase();
+	return Promise.resolve({
+		values: _.filter(values, (d, i) => _.includes(d, inputInLowerCase))
+	})
 }
+
+function foundItem(item) {
+  return <span>{item}</span>;
+}
+
+const App = () => <div>
+  <div className={styles.block}>
+    <h3>Наведи чтобы выбрать значение</h3>
+    <div className={styles.hovered}>
+      <Combobox
+        source={getSource}
+        renderItem={foundItem}
+        placeholder="Выберите значение"
+        openButton
+      />
+    </div>
+  </div>
+
+</div>
+
+export default App;
