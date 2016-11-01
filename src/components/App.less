@@ -1,22 +1,38 @@
 @color: #ded6f5;
 
 :local {
-  .block {
+
+  .main {
     box-sizing: border-box;
     display: inline-block;
-    width: 320px;
-    height: 150px;
-    background-color: @color;
-    border: 1px solid darken(@color, 10%);
     margin: 30px;
+  }
+
+  .block {
+    box-sizing: border-box;
+    width: 300px;
+    height: 65px;
+    border: 1px solid darken(@color, 10%);
     padding: 20px 30px;
 
-    .hovered {
+    .combobox {
+      margin-top: -5px;
+      margin-left: -10px;
       display: none;
     }
 
-    &:hover .hovered {
-      display: block;
+    .text {
+      color: grey;
+      display: inline;
+    }
+
+    &:hover {
+      .combobox {
+        display: block;
+      }
+      .text {
+        display: none;
+      }
     }
   }
 }
